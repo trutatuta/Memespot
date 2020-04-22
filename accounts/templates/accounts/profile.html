@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div >
+        <p>Username : {{user.username}} | Email : {{user.email}}</p>
+    </div>
+    <div class="gallery">
+                {% for announce in all_announces_by_user %}
+                    <a href="{% url 'detail_up' announce.id %}" style="cursor: pointer;"><img src="{{ announce.image.url }}" class="img-fluid"  alt="mem"/></a>
+                {% endfor %}
+    </div>
+</div>
+{% endblock %}

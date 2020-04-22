@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container">
+    <div>
+        <img src="{{ post.image.url }}" class="img-fluid"/>
+    </div>
+    <div class="det">
+        <p>{{post.caption}}</p>
+    </div>
+    <div class="det">
+        <h6>Post by {{post.user.username}}  | {{post.pub_date_pretty}}</h6>
+    </div>
+    {% if post.user %}
+        <a href="{% url 'edit' post.pk %}"><button>Edit</button></a>
+        <a href="{% url 'delete' post.pk %}"><button>Delete</button></a>
+
+    {% endif %}
+</div>
+{% endblock %} 

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>OUR MEMES</h1>
+    <div class="container">
+        <div class="gallery">
+            {% for post in posts.all %}
+                    <a href="{% url 'detail' post.id %}" style="cursor: pointer;"><img src="{{ post.image.url }}" class="img-fluid gg"  alt="mem"/></a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
